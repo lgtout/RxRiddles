@@ -1,6 +1,7 @@
 package com.vanniktech.rxriddles
 
 import io.reactivex.Observable
+import java.util.concurrent.TimeUnit
 
 object Riddle8 {
   /**
@@ -9,6 +10,6 @@ object Riddle8 {
    * Use case: Make an Observable "lazy" for some time. For instance, when wanting to postpone some UI action.
    */
   fun solve(source: Observable<Unit>): Observable<Unit> {
-    TODO()
+      return source.delaySubscription(200, TimeUnit.MILLISECONDS)
   }
 }

@@ -4,6 +4,7 @@ import com.vanniktech.rxriddles.solutions.Riddle8Solution
 import com.vanniktech.rxriddles.tools.RxRule
 import io.reactivex.Observable
 import org.assertj.core.api.Java6Assertions.assertThat
+import org.assertj.core.api.Java6Assertions.not
 import org.junit.Rule
 import org.junit.Test
 import java.util.concurrent.TimeUnit.MILLISECONDS
@@ -18,7 +19,10 @@ class Riddle8Test {
 
     val source = Observable.just(Unit)
         .doOnSubscribe { counter.incrementAndGet() }
-        .doOnEach { counter.incrementAndGet() }
+            // doOnEach is triggered by both onNext and onComplete.
+        .doOnEach { notification ->
+          println(notification.isOnComplete)
+          counter.incrementAndGet() }
         .doOnError { counter.incrementAndGet() }
         .doOnComplete { counter.incrementAndGet() }
 
