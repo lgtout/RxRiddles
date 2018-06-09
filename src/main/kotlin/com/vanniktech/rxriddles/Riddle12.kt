@@ -9,6 +9,6 @@ object Riddle12 {
    * Use case: Getting a network error and you want to recover and show some default state.
    */
   fun solve(source: Observable<Int>): Observable<Int> {
-    TODO()
+      return source.onErrorResumeNext(Observable.just(5))
   }
 }
