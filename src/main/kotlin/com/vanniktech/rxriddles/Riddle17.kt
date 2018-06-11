@@ -9,6 +9,8 @@ object Riddle17 {
    * Use case: Reactive types are lazy by default. Hence you might also want to get the value upon the subscription and not execution time.
    */
   fun solve(function: () -> Int): Single<Int> {
-    TODO()
+      return Single.defer({
+          Single.just(function())
+      })
   }
 }

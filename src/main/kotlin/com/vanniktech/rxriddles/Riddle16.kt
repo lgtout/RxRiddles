@@ -11,6 +11,8 @@ object Riddle16 {
    * Use case: The [first] Observable is a TextField and you want to issue a network request while disposing the old requests in case the user has typed something new.
    */
   fun solve(first: Observable<String>, function: (String) -> Single<Int>): Observable<Int> {
-    TODO()
+      return first.switchMapSingle { string: String ->
+          function(string)
+      }
   }
 }
