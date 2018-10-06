@@ -9,6 +9,6 @@ object Riddle20 {
    * Use case: There something you want to execute and in your UI you have multiple trigger points.
    */
   fun solve(first: Observable<Int>, second: Observable<Int>): Observable<Int> {
-    TODO()
+    return first.mergeWith(second)
   }
 }
