@@ -9,6 +9,6 @@ object Riddle30 {
    * Use case: Add some logging.
    */
   fun solve(source: Single<Int>, function: () -> Unit): Single<Int> {
-    TODO()
+      return source.doOnSubscribe { function() }
   }
 }

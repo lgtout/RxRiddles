@@ -10,6 +10,6 @@ object Riddle24 {
    * Use case: Know how many emissions have been sent out.
    */
   fun solve(source: Observable<Any>): Single<Long> {
-    TODO()
+      return source.count()
   }
 }

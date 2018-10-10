@@ -9,6 +9,6 @@ object Riddle29 {
    * Use case: Add some logging.
    */
   fun solve(source: Maybe<Int>, function: (Throwable) -> Unit): Maybe<Int> {
-    TODO()
+      return source.doOnError(function)
   }
 }

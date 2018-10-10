@@ -9,6 +9,6 @@ object Riddle23 {
    * Use case: You get some data from a bad source and know for sure it's of a certain type that you require.
    */
   fun solve(source: Observable<Any>): Observable<String> {
-    TODO()
+      return source.map { it as String }
   }
 }

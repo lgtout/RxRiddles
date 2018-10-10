@@ -10,6 +10,6 @@ object Riddle33 {
    * Use case: You want to shift work to a particular [Scheduler].
    */
   fun solve(source: Completable, scheduler: Scheduler): Completable {
-    TODO()
+      return source.observeOn(scheduler)
   }
 }

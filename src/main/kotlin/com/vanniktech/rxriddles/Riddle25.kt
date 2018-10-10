@@ -9,6 +9,6 @@ object Riddle25 {
    * Use case: Continue with data if the stream is empty.
    */
   fun solve(source: Observable<Int>): Observable<Int> {
-    TODO()
+      return source.defaultIfEmpty(5)
   }
 }
